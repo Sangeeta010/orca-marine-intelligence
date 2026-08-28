@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  background-color: #050a14;
+  color: #e6f7fb;
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  min-height: 100vh;
+  background-image: radial-gradient(ellipse at top, rgba(14, 138, 166, 0.18), transparent 60%),
+    radial-gradient(ellipse at bottom, rgba(34, 211, 238, 0.06), transparent 55%);
+  background-attachment: fixed;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(5, 10, 20, 0.6);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(34, 211, 238, 0.25);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(34, 211, 238, 0.45);
+}
+
+@layer components {
+  .glass {
+    @apply rounded-2xl border border-cyan-400/15 bg-ocean-900/50 backdrop-blur-xl shadow-card;
+  }
+  .glass-strong {
+    @apply rounded-2xl border border-cyan-400/20 bg-ocean-900/70 backdrop-blur-2xl shadow-card;
+  }
+  .glow-border {
+    @apply border border-cyan-400/30 shadow-glow-sm;
+  }
+  .text-glow {
+    text-shadow: 0 0 12px rgba(34, 211, 238, 0.5);
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan-400 to-ocean-500 px-5 py-2.5 text-sm font-semibold text-ocean-950 transition hover:shadow-glow hover:brightness-110 active:scale-[0.98];
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-cyan-400/25 bg-ocean-900/40 px-5 py-2.5 text-sm font-medium text-cyan-100 transition hover:border-cyan-400/50 hover:bg-ocean-800/60 active:scale-[0.98];
+  }
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-cyan-400/20 bg-ocean-900/50 px-3 py-1 text-xs font-medium text-cyan-200;
+  }
+  .section-title {
+    @apply font-display text-2xl font-semibold tracking-tight text-white;
+  }
+  .label {
+    @apply text-xs font-medium uppercase tracking-wider text-cyan-200/60;
+  }
+}
+
+.recharts-default-tooltip {
+  background: rgba(5, 10, 20, 0.92) !important;
+  border: 1px solid rgba(34, 211, 238, 0.25) !important;
+  border-radius: 12px !important;
+}
+.recharts-tooltip-label {
+  color: #67e8f9 !important;
+  font-weight: 600 !important;
+}
+.recharts-cartesian-axis-tick text {
+  fill: rgba(165, 243, 252, 0.55) !important;
+  font-size: 11px !important;
+}
+.recharts-cartesian-grid line {
+  stroke: rgba(34, 211, 238, 0.08) !important;
+}
